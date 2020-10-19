@@ -19,4 +19,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 .criminalsContainer {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-direction: row;
+	
+
+}
+.criminal__card {
+	border: solid;
+	flex-basis: 15%;
+	
 }
