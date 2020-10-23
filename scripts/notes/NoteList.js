@@ -8,7 +8,7 @@ import { getNotes } from "./NoteDataProvider.js";
 const notesContainer = document.querySelector(".notesContainer")
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("noteStateChangedEvent", () => Notelist())
+eventHub.addEventListener("noteStateChanged", () => NoteList())
 
 
 export const NoteList = () => {

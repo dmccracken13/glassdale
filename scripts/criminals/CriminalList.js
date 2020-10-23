@@ -16,22 +16,6 @@ export const CriminalList = () => {
     
 }
 
-const render = (criminalArray) => {
-    let criminalsHTMLRepresentation = ""
-    for (const criminal of criminalArray) {
-    
-    criminalsHTMLRepresentation += Criminal(criminal)
-
-           criminalsContainer.innerHTML = `
-               <h3>Glassdale Criminals</h3>
-               <section class="criminalList">
-                   ${criminalsHTMLRepresentation}
-               </section>
-               `
-    }
-}
-
-
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeSelected", event => {
     // console.log("crime selected event happened")
@@ -77,9 +61,28 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
 
     const filteredArrayCriminals = criminalsArray.filter(
         (criminalObj) => {
-            return criminalObj.arrestingOfficer === selectedOfficerName
+            if (criminalObj.arrestingOfficer === selectedOfficerName) {
+                return true
+              }
+              return false
+            })
+        console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
             
-        }
-    )
-
+        render(filteredArrayCriminals)
+        console.log("CriminalList: Filtered list of criminals rendered to DOM")
 })
+            
+const render = (criminalsArray) => {
+        let criminalsHTMLRepresentations = ""
+        for (const criminal of criminalsArray) {
+
+        criminalsHTMLRepresentations += Criminal(criminal)
+
+        criminalsContainer.innerHTML = `
+            <h3>Glassdale Criminals</h3>
+            <section class="criminalList">
+                ${criminalsHTMLRepresentations}
+            </section>
+            `
+        }
+}
