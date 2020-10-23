@@ -17,16 +17,35 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
-.criminalsContainer {
+
+/* .criminalsContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	flex-direction: row;
-	
+} */
 
+.investigation {
+    display: flex;
 }
+
+.criminalsContainer {
+	flex: 3;
+}
+
+.criminalList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
 .criminal__card {
 	border: solid;
 	flex-basis: 15%;
-	
 }
+
+.notesContainer {
+    flex: 1 
+}
+

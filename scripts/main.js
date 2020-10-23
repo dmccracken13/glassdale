@@ -1,10 +1,20 @@
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
-import { CriminalList } from "/scripts/criminals/CriminalList.js"
+import { CriminalList } from "./criminals/CriminalList.js"
 
+import { OfficerSelect } from "./officers/OfficerSelect.js"
+import { OfficerList } from "./officers/Officerlist.js";
 
-// CriminalList()
-// console.log()
+import { NoteForm } from "./notes/NoteForm.js"
+import { NoteList } from "./notes/NoteList.js"
 
+CriminalList()
 ConvictionSelect() 
-console.log()
+
+OfficerList()
+OfficerSelect()
+
+
+NoteForm()
+NoteList()
+
 
