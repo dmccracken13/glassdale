@@ -8,6 +8,8 @@ import { NoteForm } from "./notes/NoteForm.js"
 import { NoteList } from "./notes/NoteList.js"
 
 import { createAlibiEventListener } from "./criminals/AlibiList.js"
+import { WitnessButton } from "./witnesses/WitnessButton.js"
+import { WitnessList } from "./witnesses/WitnessList.js"
 
 CriminalList()
 ConvictionSelect() 
@@ -15,8 +17,10 @@ ConvictionSelect()
 OfficerList()
 OfficerSelect()
 
-
 NoteForm()
 NoteList()
 
 createAlibiEventListener()
+
+WitnessButton()
+// WitnessList()
