@@ -43,5 +43,3 @@ contentTarget.addEventListener("change", (changeEvent) => {
     eventHub.dispatchEvent(customEvent)
     }
 })
-
-

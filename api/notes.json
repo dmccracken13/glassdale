@@ -1,44 +1,20 @@
 {
   "notes": [
     {
-      "id": 1,
-      "date": "11/13/1987",
-      "timestamp": "",
-      "author": "Off. McCracken",
-      "suspect": "Carole Baskin",
-      "note": "Carole Baskin killed her husband"
+      "dateOfInterview": "2020-11-05",
+      "timestamp": 1604596995816,
+      "author": "Det. McCracken",
+      "criminalId": 4,
+      "note": "Carole Baskin killed her husband, wacked 'im",
+      "id": 1
     },
     {
-      "dateOfInterview": "2020-10-28",
-      "timestamp": 1603466362292,
-      "author": "Danny",
-      "suspect": "Doc Antle",
-      "note": "Free Joe exotic!",
+      "dateOfInterview": "2020-11-09",
+      "timestamp": 1604951444544,
+      "author": "Det. Willia",
+      "criminalId": 5,
+      "note": "Interviewed suspect, seems legit",
       "id": 2
-    },
-    {
-      "dateOfInterview": "2020-10-27",
-      "timestamp": 1603466706440,
-      "author": "Danny",
-      "suspect": "Zoe ",
-      "note": "Zoe is sketchy",
-      "id": 3
-    },
-    {
-      "dateOfInterview": "2020-10-28",
-      "timestamp": 1603466802402,
-      "author": "Frank",
-      "suspect": "Frank Grey",
-      "note": "He dunnit",
-      "id": 4
-    },
-    {
-      "dateOfInterview": "2020-10-26",
-      "timestamp": 1603467043378,
-      "author": "Bob",
-      "suspect": "Myself",
-      "note": "Really trying hard here",
-      "id": 5
     }
   ]
 }

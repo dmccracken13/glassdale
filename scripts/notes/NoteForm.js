@@ -1,13 +1,39 @@
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 import { saveNote } from "./NoteDataProvider.js"
+
+
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
-const render = () => {
+// Create function that will get criminals from API for noteform dropdown 
+
+export const NoteForm = () => {
+    // console.log("Suspect Select: Get data rom an API and renderdropdown to DOM")
+    
+    getCriminals()
+    .then(() => {
+        const criminalsArray = useCriminals()
+        // console.log("criminalsArray", criminalsArray)
+
+        render(criminalsArray)
+    })
+}
+
+// Refactor render to include dropdown select as a list of criminals and take a parameter
+
+const render = (criminals) => {
     contentTarget.innerHTML = `
     <input type="date" id="note--dateOfInterview">
     <input type="text" id="note--author" placeholder="Your Name Here"> 
     <textarea id="note--note" placeholder="Your Note Here"></textarea>
-    <input type="text" id="note--suspect" placeholder="Suspect"> 
+    <select id="noteForm--criminal" class="criminalSelect">
+        <option value="0">Please select a suspect..</option>
+        ${criminals.map(criminalObj => {
+                return `<option value="${criminalObj.id}">${criminalObj.name}</option>`
+                }
+                ).join("") 
+            }
+    </select> 
         <button id="saveNote">Save Note</button>
     `
 }
@@ -16,7 +42,7 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         const dateOfInterview = document.querySelector("#note--dateOfInterview").value
         const author = document.querySelector("#note--author").value
-        const suspect = document.querySelector("#note--suspect").value
+        const criminalId = parseInt(document.querySelector("#noteForm--criminal").value)
         const note = document.querySelector("#note--note").value
         const timestamp = Date.now()
 
@@ -27,7 +53,7 @@ eventHub.addEventListener("click", clickEvent => {
             dateOfInterview,
             timestamp,
             author,
-            suspect,
+            criminalId,
             note
         }
 
@@ -35,7 +61,3 @@ eventHub.addEventListener("click", clickEvent => {
         saveNote(newNote)
     }
 })
-
-export const NoteForm = () => {
-    render()
-}

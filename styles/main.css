@@ -33,12 +33,45 @@ h1,h2,h3,h4,h5,h6 {
     flex-direction: row;
 }
 
+.witnessList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.officersList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
 .criminal__card {
 	border: solid;
-	flex-basis: 20%;
+    flex-basis: 20%;
+    justify-content: left;
+    margin: 10px;
+}
+
+.witness__card {
+	border: solid;
+    flex-basis: 20%;
+    justify-content: left;
+    margin: 10px;
+}
+
+.officer__card {
+	border: solid;
+    flex-basis: 20%;
+    justify-content: left;
+    margin: 10px;
 }
 
 .notesContainer {
     flex: 1 
 }
 
+.notes__header {
+    text-align: center;
+}
