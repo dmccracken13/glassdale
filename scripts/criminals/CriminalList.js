@@ -8,7 +8,7 @@ const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
 
 export const CriminalList = () => {
-    
+
     getCriminals()
         .then( () => {    
         getFacilities()
