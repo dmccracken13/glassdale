@@ -23,7 +23,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .criminalsContainer {
-	flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
 }
 
 .criminalList {
