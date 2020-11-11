@@ -38,6 +38,8 @@ eventHub.addEventListener("crimeSelected", event => {
         */
     const criminalsArray =  useCriminals() 
     const convictionsArray = useConvictions() 
+    const facilitiesArray = useFacilities()
+    const criminalFacilitiesArray = useCriminalFacilities()
 
     const convictionThatWasChosen = convictionsArray.find(convictionsObject => {
         return convictionsObject.id === event.detail.crimeThatWasChosen
@@ -46,18 +48,7 @@ eventHub.addEventListener("crimeSelected", event => {
     const filteredCriminalsArray = criminalsArray.filter(criminalObject => {
         return criminalObject.conviction === convictionThatWasChosen.name
     })
-    let criminalsHTMLRepresentation = ""
-    for (const criminal of filteredCriminalsArray) {
-    
-        criminalsHTMLRepresentation += Criminal(criminal)
-
-        criminalsContainer.innerHTML = `
-            <h3>Glassdale Criminals</h3>
-            <section class="criminalList">
-                ${criminalsHTMLRepresentation}
-            </section>
-            `
-        }
+    render(filteredCriminalsArray, facilitiesArray, criminalFacilitiesArray )
     }
 })
     
@@ -69,6 +60,8 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
     const selectedOfficerName = officerSelectedEventObj.detail.officerName
 
     const criminalsArray = useCriminals()
+    const facilitiesArray = useFacilities()
+    const criminalFacilitiesArray = useCriminalFacilities()
 
     const filteredArrayCriminals = criminalsArray.filter(
         (criminalObj) => {
@@ -79,7 +72,7 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
             })
         console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
             
-        render(filteredArrayCriminals)
+        render(filteredArrayCriminals, facilitiesArray, criminalFacilitiesArray)
         console.log("CriminalList: Filtered list of criminals rendered to DOM")
 })
             
