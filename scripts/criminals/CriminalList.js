@@ -18,9 +18,9 @@ export const CriminalList = () => {
     .then(getCriminalFacilities)
     .then(() => {
       // Pull in the data now that it has been fetched
-       facilities = useFacilities();
-       crimFac = useCriminalFacilities();
-       criminals = useCriminals();
+    facilities = useFacilities();
+    crimFac = useCriminalFacilities();
+    criminals = useCriminals();
 
       // Pass all three collections of data to render()
       render(criminals, facilities, crimFac);
@@ -37,8 +37,6 @@ eventHub.addEventListener("crimeSelected", (event) => {
         */
     const criminalsArray = useCriminals();
     const convictionsArray = useConvictions();
-    const facilitiesArray = useFacilities();
-    const criminalFacilitiesArray = useCriminalFacilities();
 
     const convictionThatWasChosen = convictionsArray.find(
       (convictionsObject) => {
@@ -49,7 +47,8 @@ eventHub.addEventListener("crimeSelected", (event) => {
     const filteredCriminalsArray = criminalsArray.filter((criminalObject) => {
       return criminalObject.conviction === convictionThatWasChosen.name;
     });
-    render(filteredCriminalsArray, facilitiesArray, criminalFacilitiesArray);
+    criminals = filteredCriminalsArray
+    render();
   }
 });
 
@@ -58,10 +57,7 @@ eventHub.addEventListener("officerSelected", (officerSelectedEventObj) => {
   // selectedOfficerName)
 
   const selectedOfficerName = officerSelectedEventObj.detail.officerName;
-
   const criminalsArray = useCriminals();
-  const facilitiesArray = useFacilities();
-  const criminalFacilitiesArray = useCriminalFacilities();
 
   const filteredArrayCriminals = criminalsArray.filter((criminalObj) => {
     if (criminalObj.arrestingOfficer === selectedOfficerName) {
@@ -69,13 +65,13 @@ eventHub.addEventListener("officerSelected", (officerSelectedEventObj) => {
     }
     return false;
   });
-  console.log(
-    "CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer",
-    filteredArrayCriminals
-  );
-
-  render(filteredArrayCriminals, facilitiesArray, criminalFacilitiesArray);
-  console.log("CriminalList: Filtered list of criminals rendered to DOM");
+  // console.log(
+  //   "CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer",
+  //   filteredArrayCriminals
+  // );
+  criminals = filteredArrayCriminals
+  render();
+  // console.log("CriminalList: Filtered list of criminals rendered to DOM");
 });
 
 // const render = (criminalsArray) => {
@@ -93,26 +89,29 @@ eventHub.addEventListener("officerSelected", (officerSelectedEventObj) => {
 //         }
 // }
 
-const render = (criminalsToRender, allFacilities, allRelationships) => {
+const render = () => {
+  let criminalsHTMLRepresentations = ""
   // Step 1 - Iterate all criminals
-  criminalsContainer.innerHTML = criminalsToRender
-    .map((criminalObject) => {
-      // Step 2 - Filter all relationships to get only ones for this criminal
-
-      const facilityRelationshipsForThisCriminal = allRelationships.filter(
-        (cf) => cf.criminalId === criminalObject.id
+  for (const criminal of criminals) {
+  // Step 2 - Filter all relationships to get only ones for this criminal
+  const facilityRelationshipsForThisCriminal = crimFac.filter(
+        (cf) => cf.criminalId === criminal.id
       );
-
-      // Step 3 - Convert the relationships to facilities with map()
-      const facilities = facilityRelationshipsForThisCriminal.map((cf) => {
-        const matchingFacilityObject = allFacilities.find(
-          (facility) => facility.id === cf.facilityId
+  // Step 3 - Convert the relationships to facilities with map()
+  const matchFac = facilityRelationshipsForThisCriminal.map((cf) => {
+  const matchingFacilityObject = facilities.find(
+        (facility) => facility.id === cf.facilityId
         );
-        return matchingFacilityObject;
-      });
-
+  return matchingFacilityObject;
+  });
+  criminalsHTMLRepresentations += Criminal(criminal, matchFac)
       // Must pass the matching facilities to the Criminal component
-      return Criminal(criminalObject, facilities);
-    })
-    .join("");
+    
+  }
+  criminalsContainer.innerHTML = `
+  <h3>Glassdale Criminals</h3>
+    <section class="criminalList">
+      ${criminalsHTMLRepresentations}
+    </section>
+  `
 };
