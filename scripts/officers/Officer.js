@@ -1,8 +1,8 @@
 export const Officer = (officerObj) => {
-    return`
+  return `
         <div class="officer__card">
         <p>${officerObj.name}
         </p>
         </div>
-    `
-}
+    `;
+};

@@ -1,13 +1,13 @@
-let criminalFacilities = []
+let criminalFacilities = [];
 
 export const useCriminalFacilities = () => {
-    return criminalFacilities.slice()
-}
+  return criminalFacilities.slice();
+};
 
 export const getCriminalFacilities = () => {
-    return fetch("https://criminals.glassdale.us/criminalFacilities")
-        .then(response => response.json())
-        .then(apiData => {
-            criminalFacilities = apiData
-        })
-}
+  return fetch("https://criminals.glassdale.us/criminalFacilities")
+    .then((response) => response.json())
+    .then((apiData) => {
+      criminalFacilities = apiData;
+    });
+};
