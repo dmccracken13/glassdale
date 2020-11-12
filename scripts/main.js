@@ -8,18 +8,16 @@ import { createAlibiEventListener } from "./criminals/AlibiList.js";
 import { WitnessButton } from "./witnesses/WitnessButton.js";
 import { WitnessList } from "./witnesses/WitnessList.js";
 import { renderFacilityButton } from "./facilities/DisplayFacilitiesButton.js";
+import { FacilitiesList } from "./facilities/FacilitiesList.js";
 
 CriminalList();
 ConvictionSelect();
-
 OfficerList();
 OfficerSelect();
-
 NoteForm();
 NoteList();
-
 createAlibiEventListener();
-
 WitnessButton();
 renderFacilityButton();
+// FacilitiesList()
 // WitnessList()
