@@ -10,8 +10,7 @@ const criminalsContainer = document.querySelector(".criminalsContainer")
 export const CriminalList = () => {
 
     getCriminals()
-        .then( () => {    
-        getFacilities()
+        .then(getFacilities)
         .then(getCriminalFacilities)
         .then( () => {
             // Pull in the data now that it has been fetched
@@ -21,9 +20,9 @@ export const CriminalList = () => {
 
             // Pass all three collections of data to render()
             render(criminals, facilities, crimFac)
-        }
-    )}
-)}
+        })
+}
+
 
 
 

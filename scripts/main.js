@@ -10,6 +10,7 @@ import { NoteList } from "./notes/NoteList.js"
 import { createAlibiEventListener } from "./criminals/AlibiList.js"
 import { WitnessButton } from "./witnesses/WitnessButton.js"
 import { WitnessList } from "./witnesses/WitnessList.js"
+import { renderFacilityButton } from "./facilities/DisplayFacilitiesButton.js"
 
 CriminalList()
 ConvictionSelect() 
@@ -23,4 +24,5 @@ NoteList()
 createAlibiEventListener()
 
 WitnessButton()
+renderFacilityButton()
 // WitnessList()

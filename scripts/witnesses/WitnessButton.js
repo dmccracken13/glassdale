@@ -13,6 +13,6 @@ eventHub.addEventListener("click", (eventObj) => {
   if(eventObj.target.id === "witnessButton") {
     const witnessButtonClickedEvent = new CustomEvent("witnessButtonClicked")
   eventHub.dispatchEvent(witnessButtonClickedEvent)
-    console.log("button was clicked")
+    console.log("witness button was clicked")
     }
 })
