@@ -7,73 +7,78 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: "Comfortaa", Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
 
 .investigation {
-    display: flex;
+  display: flex;
 }
 
 .criminalsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
 }
 
 .criminalList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .witnessList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .officersList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .criminal__card {
-	border: solid;
-    flex-basis: 20%;
-    justify-content: left;
-    margin: 10px;
+  border: solid;
+  flex-basis: 20%;
+  justify-content: left;
+  margin: 10px;
 }
 
 .witness__card {
-	border: solid;
-    flex-basis: 20%;
-    justify-content: left;
-    margin: 10px;
+  border: solid;
+  flex-basis: 20%;
+  justify-content: left;
+  margin: 10px;
 }
 
 .officer__card {
-	border: solid;
-    flex-basis: 20%;
-    justify-content: left;
-    margin: 10px;
+  border: solid;
+  flex-basis: 20%;
+  justify-content: left;
+  margin: 10px;
 }
 
 .notesContainer {
-    flex: 1 
+  flex: 1;
 }
 
 .notes__header {
-    text-align: center;
+  text-align: center;
 }
