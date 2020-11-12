@@ -1,20 +1,16 @@
-import {
-  getCriminals,
-  useCriminals,
-} from "/scripts/criminals/CriminalProvider.js";
+import { getCriminals, useCriminals} from "/scripts/criminals/CriminalProvider.js";
 import { Criminal } from "/scripts/criminals/Criminal.js";
 import { useConvictions } from "/scripts/convictions/ConvictionProvider.js";
-import {
-  getFacilities,
-  useFacilities,
-} from "/scripts/facilities/FacilityProvider.js";
-import {
-  getCriminalFacilities,
-  useCriminalFacilities,
-} from "/scripts/facilities/CriminalFacilityProvider.js";
+import { getFacilities, useFacilities } from "/scripts/facilities/FacilityProvider.js";
+import { getCriminalFacilities, useCriminalFacilities } from "/scripts/facilities/CriminalFacilityProvider.js";
 
 const eventHub = document.querySelector(".container");
 const criminalsContainer = document.querySelector(".criminalsContainer");
+
+let facilities = []
+let crimFac = []
+let criminals = []
+
 
 export const CriminalList = () => {
   getCriminals()
@@ -22,9 +18,9 @@ export const CriminalList = () => {
     .then(getCriminalFacilities)
     .then(() => {
       // Pull in the data now that it has been fetched
-      const facilities = useFacilities();
-      const crimFac = useCriminalFacilities();
-      const criminals = useCriminals();
+       facilities = useFacilities();
+       crimFac = useCriminalFacilities();
+       criminals = useCriminals();
 
       // Pass all three collections of data to render()
       render(criminals, facilities, crimFac);
