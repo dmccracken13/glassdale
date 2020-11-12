@@ -14,6 +14,6 @@ eventHub.addEventListener("click", (eventObj) => {
       "facilitiesButtonClicked"
     );
     eventHub.dispatchEvent(facilitiesButtonClickedEvent);
-    console.log("facilities button was clicked");
+    // console.log("facilities button was clicked");
   }
 });

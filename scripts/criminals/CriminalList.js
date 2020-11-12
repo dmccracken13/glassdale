@@ -74,21 +74,6 @@ eventHub.addEventListener("officerSelected", (officerSelectedEventObj) => {
   // console.log("CriminalList: Filtered list of criminals rendered to DOM");
 });
 
-// const render = (criminalsArray) => {
-//         let criminalsHTMLRepresentations = ""
-//         for (const criminal of criminalsArray) {
-
-//         criminalsHTMLRepresentations += Criminal(criminal)
-
-//         criminalsContainer.innerHTML = `
-//             <h3>Glassdale Criminals</h3>
-//             <section class="criminalList">
-//                 ${criminalsHTMLRepresentations}
-//             </section>
-//             `
-//         }
-// }
-
 const render = () => {
   let criminalsHTMLRepresentations = ""
   // Step 1 - Iterate all criminals

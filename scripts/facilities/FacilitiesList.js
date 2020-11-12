@@ -51,7 +51,7 @@ const render = () => {
 
 // Listen for the custom event you dispatched in DisplayFacilitiesButton
 eventHub.addEventListener("click", (eventObj) => {
-    console.log("facilities button click heard")
+    // console.log("facilities button click heard")
     // Use the property you added to the event detail.
     if (eventObj.target.id === "facilities") {
     FacilitiesList()

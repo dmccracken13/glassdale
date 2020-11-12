@@ -33,42 +33,14 @@ h6 {
   flex: 3;
 }
 
-.criminalList {
+.criminalList, .witnessList, .officersList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: row;
 }
 
-.witnessList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-
-.officersList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  flex-direction: row;
-}
-
-.criminal__card {
-  border: solid;
-  flex-basis: 20%;
-  justify-content: left;
-  margin: 10px;
-}
-
-.witness__card {
-  border: solid;
-  flex-basis: 20%;
-  justify-content: left;
-  margin: 10px;
-}
-
-.officer__card {
+.criminal__card, .witness__card, .officer__card, .facility__card {
   border: solid;
   flex-basis: 20%;
   justify-content: left;

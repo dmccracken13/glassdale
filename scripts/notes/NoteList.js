@@ -60,23 +60,3 @@ eventHub.addEventListener("click", (clickEvent) => {
     });
   }
 });
-
-// const render = (noteCollection, criminalCollection) => {
-//     let notesHTMLRepresentation = ""
-
-//     for (const note of noteCollection) {
-//         notesHTMLRepresentation += noteHTML(note)
-//     }
-//     notesContainer.innerHTML = noteCollection.map(note => {
-//         // Find the related criminal
-//         const relatedCriminal = criminalCollection.find(criminal => criminal.id === note.criminalId)
-//         return `
-//             <section class="note">
-//                 <h2>Note about ${relatedCriminal.name}</h2>
-//                 ${note.note}
-//             </section>
-//             <button id="deleteNote--${note.id}">Delete</button>
-
-//         `
-//     })
-// }
